@@ -38,5 +38,5 @@
 ## Deployment
 - [x] Testes e otimizações finais
 - [x] Checkpoint antes do deploy
-- [ ] Deploy no Manus
-- [ ] Verificação de funcionalidades em produção
+- [x] Deploy no Manus (Público)
+- [x] Verificação de funcionalidades em produção
