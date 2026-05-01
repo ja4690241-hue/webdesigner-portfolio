@@ -56,7 +56,11 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section id="services" className="py-20 md:py-32 bg-background relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-10" />
+
       <div className="container">
         {/* Section header */}
         <motion.div
@@ -92,15 +96,36 @@ export default function ServicesSection() {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group p-8 rounded-xl bg-card border border-border/50 hover:border-accent/50 transition-all duration-300 cursor-pointer"
+                className="group relative"
               >
-                <div className="mb-4 inline-flex p-3 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                  <Icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                {/* Glassmorphism card */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+                
+                <motion.div
+                  className="relative p-8 rounded-xl bg-gradient-to-br from-card/80 to-card/40 border border-accent/20 backdrop-blur-xl hover:border-accent/50 transition-all duration-300"
+                  whileHover={{
+                    boxShadow: "0 20px 60px rgba(59, 130, 246, 0.15)",
+                  }}
+                >
+                  <motion.div
+                    className="mb-4 inline-flex p-3 rounded-lg bg-gradient-to-br from-accent/20 to-purple-500/20 group-hover:from-accent/30 group-hover:to-purple-500/30 transition-all"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Icon className="w-6 h-6 text-accent" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Hover indicator */}
+                  <motion.div
+                    className="mt-4 h-1 bg-gradient-to-r from-accent to-purple-400 rounded-full"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
               </motion.div>
             );
           })}
