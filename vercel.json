@@ -1,11 +1,7 @@
 {
   "buildCommand": "cd client && pnpm install && pnpm run build",
-  "outputDirectory": "client/dist/public",
+  "outputDirectory": "client/dist",
   "framework": "vite",
-  "env": {
-    "VITE_APP_TITLE": "Sado/Oja - Web Designer & Developer",
-    "VITE_APP_LOGO": "https://webfolio-99ksjw7k.manus.space/logo.png"
-  },
   "rewrites": [
     {
       "source": "/(.*)",
