@@ -36,7 +36,7 @@
 - [x] Testes unitários com Vitest
 
 ## Deployment
-- [ ] Testes e otimizações finais
-- [ ] Checkpoint antes do deploy
+- [x] Testes e otimizações finais
+- [x] Checkpoint antes do deploy
 - [ ] Deploy no Manus
 - [ ] Verificação de funcionalidades em produção
