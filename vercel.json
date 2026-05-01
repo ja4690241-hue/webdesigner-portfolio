@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm install && npx vite build",
+  "buildCommand": "pnpm run build:vercel",
   "outputDirectory": "dist/public",
   "framework": null,
   "installCommand": "pnpm install",
