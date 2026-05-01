@@ -1,7 +1,8 @@
 {
-  "buildCommand": "cd client && pnpm install && pnpm run build",
-  "outputDirectory": "client/dist",
-  "framework": "vite",
+  "buildCommand": "pnpm install && npx vite build",
+  "outputDirectory": "dist/public",
+  "framework": null,
+  "installCommand": "pnpm install",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -9,27 +10,6 @@
     }
   ],
   "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    },
     {
       "source": "/assets/(.*)",
       "headers": [
