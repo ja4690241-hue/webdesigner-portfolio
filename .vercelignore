@@ -1,0 +1,14 @@
+server/
+drizzle/
+shared/
+*.test.ts
+.env
+.env.local
+.git
+.gitignore
+node_modules/
+dist/
+pnpm-lock.yaml
+README.md
+DESIGN_GUIDE.md
+todo.md
